@@ -4,7 +4,7 @@
 
 **Implementation interpretation.** This document explains the system responsibilities implied by the agreed product. It is a conceptual reference, not a selected technology stack or an instruction to start building. Names, paths, states, and interfaces below are illustrative. Decisions that affect deployment, scope, cost, or user authority remain open until resolved by the founder.
 
-The confirmed foundation is a persistent, repository-like workspace, code execution in a sandbox, and outputs that Smart Desk can display and revise. The implementation must connect these capabilities to the phone experience and the user's ChatGPT plan.
+The confirmed foundation is a local virtual file system of folders and Markdown content, code execution within the app's available capabilities, and outputs that Smart Desk can display and revise. The application shell stays stable. Smart Desk has no operated backend; the only online AI work is through the user's ChatGPT plan. Separately authorized reads from outside providers also use their APIs when requested.
 
 ## 2. Separate the responsibilities
 
@@ -14,14 +14,14 @@ The system can be understood as a set of logical responsibilities even if an eve
 | --- | --- |
 | Mobile application | Conversation, visible schedule, lists, notifications, and artifact presentation |
 | Identity and plan connection | The user's supported ChatGPT sign-in and permission to use their plan |
-| External connections | Separately authorized access to the specific outside apps the founder later selects |
+| External connections | Separately authorized read access to outside apps selected later |
 | Agent coordination | Context selection, model requests, tool execution, and completion tracking |
 | Workspace persistence | Durable objects, source material, generated code, and outputs |
 | Execution environment | Running generated scripts within an appropriate boundary |
 | Artifact presentation | Turning saved output into a usable view inside Smart Desk |
 | Schedule and notice handling | Storing scheduled items and delivering the selected in-app behavior |
 
-This separation is about responsibility, not a prescription for seven services. A concrete deployment could distribute the responsibilities differently depending on platform constraints and the founder's decisions.
+This separation is about responsibility, not a prescription for separate services. The founder has chosen a local app without a Smart Desk operated backend. Implementation choices remain within that boundary.
 
 ## 3. The fundamental flow
 
@@ -61,29 +61,27 @@ An end user's workspace need not be a public Git repository. Publishing Smart De
 
 ## 5. Repository-like workspace
 
-The workspace needs a coherent organization the AI can inspect and modify. That can include a file system, a virtual file system, structured records, or a combination. The conversation has not chosen the physical storage mechanism.
+The workspace is a virtual file system of folders and Markdown content that the AI can inspect and modify locally. Its physical storage representation is not yet chosen. Generated data, scripts, and rendering metadata may support the visible Markdown workspace where needed for a requested result.
 
 An illustrative logical layout is:
 
 ```text
 workspace/
-  workspace.json
+  home.md
+  tasks/
+    groceries.md
+  schedule/
+    this-week.md
   data/
-    price-comparison.json
-  scripts/
-    build-price-comparison.*
+    price-comparison.md
   artifacts/
-    price-comparison/
-      manifest.json
-      view.*
-  organization/
-    tasks.*
-    schedule.*
-  context/
-    artifact-index.*
+    price-comparison.md
+  internal-support/
+    graph-data.*
+    graph-renderer.*
 ```
 
-The wildcard extensions deliberately avoid choosing a language or database format. These paths illustrate the relationship between source material, generated implementation, visible output, and organization data. They are not a committed directory schema.
+The Markdown files and folders are the visible workspace in this illustration. The wildcard extensions represent supporting data or implementation whose format has not been chosen. These paths are not a committed directory schema.
 
 A storage implementation could represent tasks as database rows while exposing an appropriate workspace interface to the agent. It could also use files for some materials and structured storage for others. The important property is that operations resolve to consistent durable state.
 
@@ -152,7 +150,7 @@ The tool boundary needs to keep proposed action and executed action separate. Fo
 
 Generated code should use the runtime's available capabilities. Giving code an unrestricted host shell is a separate architecture and authority decision; the product's flexibility does not automatically settle it.
 
-The founder also wants connections to other apps, with email as an example. A connector can present authorized operations to the agent through the app's tool boundary. The provider's credential and permission scope belong to the trusted connection layer, separate from ChatGPT authorization and ordinary workspace files. See [the external-app feasibility study](06-limitations-and-external-apps.md).
+The founder also wants to read from other apps, with email as an example, so the AI can work in Smart Desk's own workspace. A connector can present authorized read operations to the agent through the app's tool boundary. The provider's credential and permission scope belong to the trusted connection layer, separate from ChatGPT authorization and ordinary workspace files. See [the external-app feasibility study](06-limitations-and-external-apps.md).
 
 ## 11. Sandbox responsibilities
 
@@ -171,20 +169,11 @@ The implementation discussion needs to resolve:
 
 These are design questions implied by executing code. Specific limits, isolation mechanisms, and permission prompts have not been chosen. They should not be presented as a completed security design.
 
-## 12. Runtime placement remains open
+## 12. Local runtime boundary
 
-There are materially different possible deployments:
+The founder has ruled out a Smart Desk operated server. The workspace, its rendering, reminders, and any general script runtime need to be local to the phone. Requests to OpenAI still use OpenAI's online service, and provider data reads still use those providers' online APIs. In this documentation, “offline” means local app operation without a Smart Desk backend; it does not mean that AI inference or live email retrieval works without internet access.
 
-| Placement | Consequences to evaluate |
-| --- | --- |
-| On the phone | Interaction with device resources, supported runtimes, lifecycle, storage, and platform distribution rules |
-| On a user's own machine or server | Connection setup, reachability, authentication, execution continuity, and responsibility for the host |
-| On a service operated for Smart Desk | Hosting cost, isolation, account architecture, operational ownership, and provider eligibility |
-| A combination | State ownership, data movement, reconnect behavior, and which operations happen where |
-
-No row has been selected. A phone-first experience does not prove all compute must occur on the phone, and open-source distribution does not decide where user workloads execute.
-
-Current mobile operating-system and distribution constraints need platform-specific research once target platforms and runtime choices are proposed. This document deliberately avoids unsupported claims that arbitrary code execution or uninterrupted background work is available everywhere.
+The remaining runtime question is which operations can safely and efficiently run within the fixed app shell on each chosen platform. Markdown and declarative chart rendering differ from installing generated native app code. Apple permits certain HTML5 and JavaScript content under App Review rule 4.7, while rule 2.5.2 restricts code that changes app functionality; a concrete implementation needs to be evaluated against both. [Apple App Review guidelines](https://developer.apple.com/app-store/review/guidelines/)
 
 ## 13. Artifact contract
 
@@ -255,7 +244,7 @@ A visible schedule needs persisted time information and a way for the app to dis
 
 Those responsibilities can be related, but they are not interchangeable. A schedule item can exist even when no AI run is active. A reminder can be deterministic once configured. A future scraping job would require more than saving a calendar entry.
 
-This distinction matters for subscriptions and mobile lifecycle. The system must not assume the model stays awake between messages or that saving a natural-language promise causes future execution. The founder has not yet decided whether arbitrary background AI jobs belong in the required behavior.
+This distinction matters for subscriptions and mobile lifecycle. Local timed notifications can be handed to the operating system and delivered while Smart Desk is closed. A future AI run is different: the model does not stay awake between messages. The founder explicitly said arbitrary scheduled agents were not part of the original task, so they remain uncommitted.
 
 ## 18. Consistency across lists, schedules, and views
 
@@ -293,6 +282,6 @@ Network retrieval and generated implementation also have separate freshness ques
 
 ## 22. What remains unselected
 
-No programming language, mobile framework, database, chart library, execution service, cloud vendor, agent framework, sync architecture, browser automation engine, or package installation policy has been chosen in the conversation.
+No programming language, mobile framework, local storage engine, chart library, sandbox implementation, agent framework, browser automation engine, or optional asset package policy has been chosen in the conversation. The deployment boundary is local app operation without a Smart Desk operated backend.
 
 This conceptual architecture preserves enough detail to evaluate those choices later. It does not use their absence as a reason to remove capabilities or quietly replace the general workspace with a fixed-function organizer.

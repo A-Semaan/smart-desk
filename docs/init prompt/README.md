@@ -41,7 +41,7 @@ The technical interpretations in these documents do not override those instructi
 
 ## The concept in one paragraph
 
-Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. It gives the AI a persistent, repository-like environment and an execution sandbox so that the AI can organize information, create scripts, collect internet data, connect to authorized external apps, and produce useful visual or interactive results inside the app. Schedules, to-do lists, and in-app notifications belong in this environment. The founder wants the capabilities to remain as flexible as the AI can be, powered through the user's ChatGPT subscription, with an exceptionally seamless interface that hides unnecessary technical complexity.
+Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. Its local virtual file system contains folders and Markdown content. The app has a stable shell for manipulating and visualizing this workspace, including generated charts and interactive results. The user can read from separately authorized external apps, such as email, to create work in Smart Desk. Schedules, to-do lists, and offline local reminders belong in this environment. The app has no operated backend; AI requests use the user's ChatGPT subscription and therefore require a network connection. The founder wants capabilities as flexible as the AI can be within this arrangement, with a seamless phone interface.
 
 ## Source boundaries
 

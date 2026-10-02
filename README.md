@@ -1,10 +1,10 @@
 # Smart Desk
 
-Smart Desk is an open-source, primarily mobile personal workspace managed through conversation with AI. The AI can work with a persistent, repository-like workspace, run scripts inside a sandbox, and turn the results into charts, tables, pages, and interactive tools that people can use inside the app.
+Smart Desk is an open-source, primarily mobile personal workspace managed through conversation with AI. Its workspace is a local, repository-like virtual file system of folders and Markdown content. The app provides stable tools to manipulate and visualize that workspace, including charts, tables, pages, and interactive results.
 
 Schedules, to-do lists, in-app notifications, and connections to other apps are part of that vision. Email is the founder's example of an external connection. The broader ambition is to make the app's capabilities as flexible as the AI can be, with an exceptionally seamless phone experience.
 
-The intended AI access model is the user's own ChatGPT subscription through the supported OpenAI integration. Eligibility, supported capabilities, and deployment arrangements still need to be established for this specific product.
+The intended AI access model is the user's own ChatGPT subscription through the supported OpenAI integration. Smart Desk has no operated backend: local storage, rendering, speech support, and reminders belong on the device. AI requests and requests to connected outside services still need the network. Native mobile eligibility for the current OpenAI sign-in flow remains to be established.
 
 ## Project status
 

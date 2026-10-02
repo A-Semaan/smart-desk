@@ -2,7 +2,7 @@
 
 ## 1. The idea
 
-**Confirmed intent.** Smart Desk is an open-source app, primarily for a phone, that lets someone organize their life through AI. The founder's starting comparison is the way an AI assistant on a laptop can work directly with a file system: it can inspect existing material, change things, create new files, and produce results that persist beyond a single message.
+**Confirmed intent.** Smart Desk is an open-source app, primarily for a phone, that lets someone organize their life through AI. The founder's starting comparison is the way an AI assistant on a laptop can work directly with a file system: it can inspect existing material, change things, create new files, and produce results that persist beyond a single message. The founder has clarified that the phone app's stable functionality is to manipulate and visualize a local virtual file system of folders and Markdown content.
 
 Smart Desk brings that style of assistance into a mobile environment. A person opens the app, talks to the AI, and asks it to do work. That work can affect their schedule, their to-do lists, stored information, or an output the AI creates for a specific request. The interface displays those results as useful objects the person can continue using.
 
@@ -73,7 +73,12 @@ The aspiration of a seamless interface includes the transitions between asking, 
 | C12 | In-app notifications | Relevant reminders or notices can appear within the app. |
 | C13 | Seamless interface | The experience should make broad agent capability easy to use on a phone. |
 | C14 | Open-source product | The founder explicitly confirmed that Smart Desk will be open source. The specific license remains undecided. |
-| C15 | External app connections | The founder wants integration with other apps and named email as an example. Specific providers and actions remain undecided. |
+| C15 | Read-only external connections | The founder wants Smart Desk to read from other apps, naming email as an example, to do work in its own workspace. Providers remain undecided. |
+| C16 | Local workspace, no operated backend | The workspace and app functions run on the device. ChatGPT and external provider requests use their respective online services. |
+| C17 | Stable workspace shell | The app manipulates and visualizes its local virtual file system of folders and Markdown content; generated content does not rewrite the app itself. |
+| C18 | Offline local reminders | Timed reminders should be schedulable through the phone's local notification mechanisms. |
+| C19 | Small offline support | The founder wants a light app with optional downloadable language and voice resources according to user preference. |
+| C20 | Transparent connections | The app should clearly show what a connected provider permits, relevant limits, and what information is sent online for an AI request. |
 
 These identifiers are a traceability aid. They do not imply a build order, a priority, or separate products.
 
@@ -100,7 +105,7 @@ For a request to reorganize a list, a new script may be unnecessary. A direct op
 
 "As flexible as the AI" describes ambition, not unlimited authority or guaranteed access to every external system. The actual capabilities depend on the available runtime, network access, permissions, integrations, model support, and the information the user provides. Where a request exceeds those boundaries, the interface must communicate the actual state of the work.
 
-The founder later added connections to other apps, naming email as an example. A connected app can contribute information or accept an action when that provider offers a supported interface and the user grants the relevant access. The exact apps and actions remain open. The separate [feasibility study](06-limitations-and-external-apps.md) explains the current limitations.
+The founder later clarified that external app connections are for reading information to do tasks in the local Smart Desk workspace, not for managing those outside apps. Email is the example. Each provider still requires its own authorization, and the exact providers remain open. The separate [feasibility study](06-limitations-and-external-apps.md) explains the current limitations.
 
 ## 8. Conversation and speech
 
@@ -122,7 +127,7 @@ Scheduling has several meanings that need to remain distinct:
 - Arranging a reminder or notice about that event.
 - Scheduling the execution of an AI or script task in the future.
 
-The first is confirmed, and in-app notifications are independently confirmed. Whether arbitrary AI work should run later without an active conversation is an open decision. The documentation does not equate having a scheduler with having unrestricted background automation.
+The first is confirmed. The founder wants local reminders that can appear even when the app is closed. Arbitrary future AI runs were explicitly described as an idea the founder had not originally requested; they are not part of the confirmed scheduling requirement.
 
 Calendar-provider synchronization, recurring events, conflict handling, and timezone behavior require later decisions. They are discussed as unresolved implementation details rather than added features.
 
@@ -140,7 +145,7 @@ The founder explicitly asked for notifications inside the app. Those notices can
 
 The app's implementation needs to distinguish a notice being created from that notice actually being displayed or read. An AI sentence saying "I'll remind you" is not enough if no reminder mechanism was configured.
 
-Operating-system push notifications, lock-screen alerts, and background delivery outside the app are separate decisions. The confirmed requirement remains visible; it is not replaced with a promise about mobile background behavior that has not been investigated.
+The founder clarified that timed notices should use the phone's offline local-notification mechanism when possible. Those notifications can be scheduled with the operating system and delivered while Smart Desk is closed, subject to user permission and device settings. They do not require a Smart Desk server or a continuously running agent. [Apple local notifications](https://developer.apple.com/documentation/usernotifications/scheduling-a-notification-locally-from-your-app), [Android alarms](https://developer.android.com/develop/background-work/services/alarms)
 
 ## 12. Internet collection and scraping
 

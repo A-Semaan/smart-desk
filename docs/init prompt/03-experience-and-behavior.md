@@ -22,7 +22,7 @@ The app can provide stable conventions for navigation, loading, errors, and view
 
 For example, charts, tables, and generated pages may have different internal structures but still fit the same phone viewport and share understandable loading behavior. The user should not need to relearn basic navigation every time a new artifact appears.
 
-The exact degree of AI control over the surrounding app layout remains open. Creating or revising an artifact is confirmed; unrestricted rewriting of the application shell, global settings, or navigation has not been explicitly selected.
+The founder has clarified that the app shell remains stable: it manipulates and visualizes the local virtual file system. AI-generated workspace content can change without the AI rewriting the application's own functionality or global navigation.
 
 ## 4. Logical surfaces
 
@@ -132,7 +132,7 @@ In-app notifications are confirmed. A notice needs understandable content and a 
 
 The exact notice presentation is open: an inbox, inline message, banner, badge, or another form could express it. The conversation also has not selected read-state behavior, categories, urgency levels, or delivery timing rules.
 
-Whether alerts appear outside the app requires a separate decision and platform-specific implementation research. In-app visibility must not be described as a promise of lock-screen or background delivery.
+The founder wants timed reminders to work offline when the app is closed. The phone can deliver local notifications that Smart Desk has already scheduled. The operating system's notification permission and presentation settings still determine what the user sees. A newly arriving email cannot trigger an offline alert until Smart Desk has retrieved information about it while connected. [Apple local notifications](https://developer.apple.com/documentation/usernotifications/scheduling-a-notification-locally-from-your-app), [Android notification permission](https://developer.android.com/develop/ui/compose/notifications/notification-permission)
 
 ## 15. Errors and partial outcomes
 
@@ -152,11 +152,13 @@ These examples explain truthful state communication. They do not prescribe extra
 
 The desired AI access model uses the person's existing ChatGPT subscription. The experience therefore needs to reflect the status of the authorized connection and the provider's actual usage allowance.
 
-Connecting an account does not mean every service used by the app is paid for by that subscription. The runtime, storage, network collection, and speech implementation each have their own technical and possibly operational requirements.
+Connecting an account does not mean every service used by the app is paid for by that subscription. The local runtime and storage use device resources; external providers can have their own usage limits; optional downloaded speech assets use device storage.
 
 The UI should avoid implying that a successful sign-in guarantees every capability. The integration document records the verified boundaries. A future implementation must present actual availability without silently replacing the founder's subscription-based intent with another billing model.
 
-The founder also wants to connect Smart Desk to other apps, with email as an example. Each outside account needs its own relevant authorization. In the interface, a request involving connected data or an external action should correspond to what that account actually permits and what Smart Desk actually completed. The exact providers, actions, and confirmation behavior remain open; [the feasibility study](06-limitations-and-external-apps.md) records current constraints.
+The founder also wants Smart Desk to read from other apps, with email as an example. Each outside account needs its own relevant authorization. In the interface, a request involving connected data should correspond to what that account actually permits and what Smart Desk actually retrieved. The exact providers and read workflows remain open; [the feasibility study](06-limitations-and-external-apps.md) records current constraints.
+
+The founder wants this to be transparent and light. A connection experience should plainly explain its read scope, provider limits, and the fact that relevant outside content will be sent to ChatGPT when the user asks AI to work with it. Optional offline language and voice resources should have understandable download sizes and installed status. The exact screens and wording remain design choices.
 
 ## 17. Accessibility and phone interaction considerations
 

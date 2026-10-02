@@ -18,7 +18,7 @@ Understand the entire intended product before proposing or making changes. Prese
 
 ### Product intent
 
-Smart Desk lets people organize their life and do useful work by talking to AI. The central analogy is the flexibility of an AI assistant that can work directly inside a laptop file system or repository, expressed through an exceptionally seamless mobile interface.
+Smart Desk lets people organize their life and do useful work by talking to AI. The central analogy is the flexibility of an AI assistant that can work directly inside a laptop file system or repository, expressed through an exceptionally seamless mobile interface. The founder has clarified that Smart Desk has no operated backend and that its stable app shell manipulates and visualizes a local virtual file system of folders and Markdown content.
 
 The app contains a persistent internal workspace that behaves like a repository. The AI can inspect and use saved material, create and modify scripts, execute code inside an appropriate sandbox, and display the outputs in the app. Work persists beyond a message and remains available for later requests.
 
@@ -44,7 +44,11 @@ Preserve all of the following:
 12. In-app notifications.
 13. An exceptionally seamless phone interface.
 14. Open-source distribution, with the specific source license still to be selected.
-15. Connections to other apps; email is the founder's example, while providers and specific actions remain undecided.
+15. Read-only connections to other apps so information can be used for work in Smart Desk; email is the founder's example, while providers and specific read operations remain undecided.
+16. A local workspace and app runtime, without a Smart Desk operated backend. ChatGPT inference and live outside-data reads still use the network.
+17. Offline local timed reminders that can be scheduled with the phone's operating system.
+18. A light app with optional language and voice resources downloaded according to user preference.
+19. Clear information about connection permissions, relevant limitations, and when outside content is sent to ChatGPT.
 
 Scheduling, lists, and notifications are part of the broader workspace vision. Do not treat them as the limits of what Smart Desk can do.
 
@@ -74,7 +78,7 @@ These examples demonstrate the general capability. Do not turn each example into
 
 Keep the responsibilities understandable: conversation and phone UI, provider connection, agent coordination, workspace persistence, sandbox execution, artifact rendering, and the selected schedule/notification behavior.
 
-These are logical responsibilities, not a selected service topology. Runtime placement, storage, rendering technology, and application framework remain open.
+These are logical responsibilities, not a selected service topology. Runtime placement is local to the phone; storage representation, rendering technology, and application framework remain open.
 
 Distinguish the development repository from end-user workspaces. Public source code does not make users' saved files or data public. A repo-like interior does not require a Git interface or GitHub synchronization for users.
 
@@ -102,13 +106,13 @@ An open-source product direction does not settle every eligibility detail. Estab
 
 ### External app connections
 
-The founder wants Smart Desk to connect to other apps, with email as an example. Read the linked feasibility study. A service connection needs its own authorization and permitted operations; ChatGPT sign-in does not grant access to the user's email or other apps. OpenAI's current plan-usage route supports custom tool calls but not hosted MCP/connectors, so the Smart Desk application or its chosen runtime would need to provide supported connector operations.
+The founder wants Smart Desk to read from other apps, with email as an example, to do work in the local workspace. Read the linked feasibility study. A service connection needs its own authorization and permitted operations; ChatGPT sign-in does not grant access to the user's email or other apps. OpenAI's current plan-usage route supports custom tool calls but not hosted MCP/connectors, so the phone app would need to provide supported connector reads.
 
-Gmail and Microsoft Graph demonstrate documented email routes, with different scope, verification, and consent rules. The founder has not selected either provider, exact email actions, or the required account types. Do not infer universal access to installed apps or give generated scripts provider credentials by default. Resolve the material connection choices with the founder before implementing them.
+Gmail and Microsoft Graph demonstrate documented email routes, with different scope, verification, and consent rules. The founder has not selected either provider, exact read operations, or the required account types. Do not infer universal access to installed apps or give generated scripts provider credentials by default. Resolve the material connection choices with the founder before implementing them.
 
 ### Scheduling and lifecycle
 
-Keep a visible schedule, reminder delivery, and future autonomous job execution conceptually separate. In-app notifications are confirmed. Push notifications and arbitrary background AI jobs remain open.
+Keep a visible schedule, local reminder delivery, and future autonomous job execution conceptually separate. In-app notices and offline local timed notifications are confirmed. Arbitrary background AI jobs were not originally requested and remain uncommitted.
 
 Do not model the assistant as continuously awake between messages. Any future work needs an actual execution mechanism. Handle the effects of interruption according to the chosen environment and the state actually saved.
 
@@ -116,7 +120,7 @@ Time interpretation, recurrence, calendar connections, and direct task-editing b
 
 ### Decisions and working agreements
 
-Read the open-decision register before making architectural choices. No mobile platform, framework, database, chart library, sandbox vendor, agent framework, speech service, cloud provider, or source license has been selected.
+Read the open-decision register before making architectural choices. No mobile platform, framework, local storage engine, chart library, sandbox implementation, agent framework, speech implementation, or source license has been selected. The founder has selected no Smart Desk operated backend.
 
 Apply the founder's working agreements exactly:
 
