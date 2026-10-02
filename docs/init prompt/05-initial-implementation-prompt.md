@@ -8,6 +8,7 @@ The supporting documentation is part of the brief:
 - [Workspace and execution](02-workspace-and-execution.md)
 - [Experience and behavior](03-experience-and-behavior.md)
 - [Integration and open decisions](04-integration-and-open-decisions.md)
+- [Limitations and external app feasibility](06-limitations-and-external-apps.md)
 
 ## Prompt begins
 
@@ -43,6 +44,7 @@ Preserve all of the following:
 12. In-app notifications.
 13. An exceptionally seamless phone interface.
 14. Open-source distribution, with the specific source license still to be selected.
+15. Connections to other apps; email is the founder's example, while providers and specific actions remain undecided.
 
 Scheduling, lists, and notifications are part of the broader workspace vision. Do not treat them as the limits of what Smart Desk can do.
 
@@ -97,6 +99,12 @@ Use current official OpenAI documentation to establish the supported Sign in wit
 The documentation checked on October 3, 2026 establishes relevant limitations. Read the linked integration document and recheck the provider sources before implementation. Do not assume that plan usage includes a hosted execution environment, the desired speech implementation, every tool, unlimited allowance, or access to the user's existing ChatGPT memories and conversations.
 
 An open-source product direction does not settle every eligibility detail. Establish the actual mobile authorization and deployment combination instead of promising support based on the product label alone.
+
+### External app connections
+
+The founder wants Smart Desk to connect to other apps, with email as an example. Read the linked feasibility study. A service connection needs its own authorization and permitted operations; ChatGPT sign-in does not grant access to the user's email or other apps. OpenAI's current plan-usage route supports custom tool calls but not hosted MCP/connectors, so the Smart Desk application or its chosen runtime would need to provide supported connector operations.
+
+Gmail and Microsoft Graph demonstrate documented email routes, with different scope, verification, and consent rules. The founder has not selected either provider, exact email actions, or the required account types. Do not infer universal access to installed apps or give generated scripts provider credentials by default. Resolve the material connection choices with the founder before implementing them.
 
 ### Scheduling and lifecycle
 

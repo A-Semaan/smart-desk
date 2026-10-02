@@ -8,7 +8,7 @@ The following sections are not a claim that Smart Desk has already been register
 
 ## 2. Confirmed subscription intent
 
-The founder wants Smart Desk's AI capabilities to use the user's own ChatGPT subscription. The founder also explicitly confirmed that the product will be open source.
+The founder wants Smart Desk's AI capabilities to use the user's own ChatGPT subscription. The founder also explicitly confirmed that the product will be open source and wants connections to other apps, naming email as an example. The external-app feasibility and constraints are detailed in [the feasibility study](06-limitations-and-external-apps.md).
 
 These are product directions to preserve. This documentation does not substitute developer-paid API billing, require users to bring API keys, or introduce another model provider. Any such change would require the founder's explicit decision.
 
@@ -92,6 +92,11 @@ Every row below is unresolved unless the founder later answers it. Listing a cho
 | D22 | Source license | The specific license for the open-source product |
 | D23 | Distribution and operation | Installation route, packaging, self-hosting arrangements, and any operated service |
 | D24 | Resource ownership | Who provides and pays for non-model resources in the selected deployment |
+| D25 | Connected providers | Which external apps or services Smart Desk will support beyond the general integration intent |
+| D26 | Connected actions | What operations are needed for each provider, including any email read, draft, or send behavior |
+| D27 | Connected account types | Whether each connection supports personal accounts, organizational accounts, or both |
+| D28 | Connection authority | When the user grants access and when a particular external action needs a separate decision |
+| D29 | Connected-data handling | Whether outside data is copied into the workspace, referenced remotely, or handled both ways |
 
 The decision register records uncertainty. It is not a backlog of approved features and does not imply priority or implementation order.
 

@@ -14,6 +14,7 @@ The system can be understood as a set of logical responsibilities even if an eve
 | --- | --- |
 | Mobile application | Conversation, visible schedule, lists, notifications, and artifact presentation |
 | Identity and plan connection | The user's supported ChatGPT sign-in and permission to use their plan |
+| External connections | Separately authorized access to the specific outside apps the founder later selects |
 | Agent coordination | Context selection, model requests, tool execution, and completion tracking |
 | Workspace persistence | Durable objects, source material, generated code, and outputs |
 | Execution environment | Running generated scripts within an appropriate boundary |
@@ -150,6 +151,8 @@ The environment can expose both kinds of capability. Illustrative categories inc
 The tool boundary needs to keep proposed action and executed action separate. For example, a model may request an update with an invalid date. The runtime should return a concrete failure rather than fabricate a successful record. The next model response can then address the problem using the real tool result.
 
 Generated code should use the runtime's available capabilities. Giving code an unrestricted host shell is a separate architecture and authority decision; the product's flexibility does not automatically settle it.
+
+The founder also wants connections to other apps, with email as an example. A connector can present authorized operations to the agent through the app's tool boundary. The provider's credential and permission scope belong to the trusted connection layer, separate from ChatGPT authorization and ordinary workspace files. See [the external-app feasibility study](06-limitations-and-external-apps.md).
 
 ## 11. Sandbox responsibilities
 

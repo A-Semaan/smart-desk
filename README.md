@@ -2,7 +2,7 @@
 
 Smart Desk is an open-source, primarily mobile personal workspace managed through conversation with AI. The AI can work with a persistent, repository-like workspace, run scripts inside a sandbox, and turn the results into charts, tables, pages, and interactive tools that people can use inside the app.
 
-Schedules, to-do lists, and in-app notifications are part of that vision. The broader ambition is to make the app's capabilities as flexible as the AI can be, with an exceptionally seamless phone experience.
+Schedules, to-do lists, in-app notifications, and connections to other apps are part of that vision. Email is the founder's example of an external connection. The broader ambition is to make the app's capabilities as flexible as the AI can be, with an exceptionally seamless phone experience.
 
 The intended AI access model is the user's own ChatGPT subscription through the supported OpenAI integration. Eligibility, supported capabilities, and deployment arrangements still need to be established for this specific product.
 
@@ -22,6 +22,7 @@ Start with [the documentation index](docs/init%20prompt/README.md).
 | [Workspace and execution](docs/init%20prompt/02-workspace-and-execution.md) | Conceptual architecture, persistent data, sandbox execution, artifacts, and scheduling |
 | [Experience and behavior](docs/init%20prompt/03-experience-and-behavior.md) | How conversation, generated interfaces, and ongoing work fit together on a phone |
 | [Integration and open decisions](docs/init%20prompt/04-integration-and-open-decisions.md) | Verified OpenAI constraints, unresolved choices, and technical questions |
+| [Limitations and external app feasibility](docs/init%20prompt/06-limitations-and-external-apps.md) | Current platform limits and the feasibility of email and other app connections |
 | [Initial implementation prompt](docs/init%20prompt/05-initial-implementation-prompt.md) | A reusable brief for a future implementation session |
 
 These documents distinguish confirmed intent from explanatory implementation concepts and unresolved decisions. They do not select a technology stack, define a smaller release, or authorize additional features.

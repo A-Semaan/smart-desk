@@ -10,7 +10,8 @@ This folder captures the initial Smart Desk concept from the founder's conversat
 2. [Workspace and execution](02-workspace-and-execution.md): how the pieces can relate internally, including storage, code, data, artifacts, and the agent's execution cycle.
 3. [Experience and behavior](03-experience-and-behavior.md): how the system should feel to a person using it on a phone.
 4. [Integration and open decisions](04-integration-and-open-decisions.md): current external facts, boundaries of those facts, and decisions that remain with the founder.
-5. [Initial implementation prompt](05-initial-implementation-prompt.md): a consolidated handoff brief for later work.
+5. [Limitations and external app feasibility](06-limitations-and-external-apps.md): researched constraints and how email or other app connections could work.
+6. [Initial implementation prompt](05-initial-implementation-prompt.md): a consolidated handoff brief for later work.
 
 ## Authority and terminology
 
@@ -40,11 +41,11 @@ The technical interpretations in these documents do not override those instructi
 
 ## The concept in one paragraph
 
-Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. It gives the AI a persistent, repository-like environment and an execution sandbox so that the AI can organize information, create scripts, collect internet data, and produce useful visual or interactive results inside the app. Schedules, to-do lists, and in-app notifications belong in this environment. The founder wants the capabilities to remain as flexible as the AI can be, powered through the user's ChatGPT subscription, with an exceptionally seamless interface that hides unnecessary technical complexity.
+Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. It gives the AI a persistent, repository-like environment and an execution sandbox so that the AI can organize information, create scripts, collect internet data, connect to authorized external apps, and produce useful visual or interactive results inside the app. Schedules, to-do lists, and in-app notifications belong in this environment. The founder wants the capabilities to remain as flexible as the AI can be, powered through the user's ChatGPT subscription, with an exceptionally seamless interface that hides unnecessary technical complexity.
 
 ## Source boundaries
 
-Product intent comes from the founder's statements and accepted clarification. External integration facts come from official OpenAI documentation, with links and the verification date recorded in [the integration document](04-integration-and-open-decisions.md). The comparison to OpenClaw is an analogy supplied by the founder, not a researched equivalence or a decision to adopt its code.
+Product intent comes from the founder's statements and accepted clarification. External integration facts come from official provider and platform documentation, with links and the verification date recorded in [the integration document](04-integration-and-open-decisions.md) and [the feasibility study](06-limitations-and-external-apps.md). The comparison to OpenClaw is an analogy supplied by the founder, not a researched equivalence or a decision to adopt its code.
 
 ## Keeping this documentation accurate
 

@@ -156,6 +156,8 @@ Connecting an account does not mean every service used by the app is paid for by
 
 The UI should avoid implying that a successful sign-in guarantees every capability. The integration document records the verified boundaries. A future implementation must present actual availability without silently replacing the founder's subscription-based intent with another billing model.
 
+The founder also wants to connect Smart Desk to other apps, with email as an example. Each outside account needs its own relevant authorization. In the interface, a request involving connected data or an external action should correspond to what that account actually permits and what Smart Desk actually completed. The exact providers, actions, and confirmation behavior remain open; [the feasibility study](06-limitations-and-external-apps.md) records current constraints.
+
 ## 17. Accessibility and phone interaction considerations
 
 Readable type, usable touch targets, understandable focus behavior, and information that does not depend only on color are relevant considerations when translating the founder's polished mobile ambition into a design.

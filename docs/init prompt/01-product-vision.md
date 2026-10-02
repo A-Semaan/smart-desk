@@ -73,6 +73,7 @@ The aspiration of a seamless interface includes the transitions between asking, 
 | C12 | In-app notifications | Relevant reminders or notices can appear within the app. |
 | C13 | Seamless interface | The experience should make broad agent capability easy to use on a phone. |
 | C14 | Open-source product | The founder explicitly confirmed that Smart Desk will be open source. The specific license remains undecided. |
+| C15 | External app connections | The founder wants integration with other apps and named email as an example. Specific providers and actions remain undecided. |
 
 These identifiers are a traceability aid. They do not imply a build order, a priority, or separate products.
 
@@ -98,6 +99,8 @@ For a graph request, the application need not contain a dedicated screen for tha
 For a request to reorganize a list, a new script may be unnecessary. A direct operation on the saved list could be enough. Flexibility does not imply that every tap needs an AI request or that every task requires new code.
 
 "As flexible as the AI" describes ambition, not unlimited authority or guaranteed access to every external system. The actual capabilities depend on the available runtime, network access, permissions, integrations, model support, and the information the user provides. Where a request exceeds those boundaries, the interface must communicate the actual state of the work.
+
+The founder later added connections to other apps, naming email as an example. A connected app can contribute information or accept an action when that provider offers a supported interface and the user grants the relevant access. The exact apps and actions remain open. The separate [feasibility study](06-limitations-and-external-apps.md) explains the current limitations.
 
 ## 8. Conversation and speech
 
