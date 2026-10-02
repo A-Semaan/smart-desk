@@ -8,10 +8,11 @@ This folder captures the initial Smart Desk concept from the founder's conversat
 
 1. [Product vision](01-product-vision.md): what Smart Desk is, what it enables, and what the founder has explicitly asked for.
 2. [Workspace and execution](02-workspace-and-execution.md): how the pieces can relate internally, including storage, code, data, artifacts, and the agent's execution cycle.
-3. [Experience and behavior](03-experience-and-behavior.md): how the system should feel to a person using it on a phone.
-4. [Integration and open decisions](04-integration-and-open-decisions.md): current external facts, boundaries of those facts, and decisions that remain with the founder.
-5. [Limitations and external app feasibility](06-limitations-and-external-apps.md): researched constraints and how email or other app connections could work.
-6. [Initial implementation prompt](05-initial-implementation-prompt.md): a consolidated handoff brief for later work.
+3. [Modular system intent](07-modular-system.md): how connected modules, optional downloads, and the ChatGPT integration fit together.
+4. [Experience and behavior](03-experience-and-behavior.md): how the system should feel to a person using it on a phone.
+5. [Integration and open decisions](04-integration-and-open-decisions.md): current external facts, boundaries of those facts, and decisions that remain with the founder.
+6. [Limitations and external app feasibility](06-limitations-and-external-apps.md): researched constraints and how email or other app connections could work.
+7. [Initial implementation prompt](05-initial-implementation-prompt.md): a consolidated handoff brief for later work.
 
 ## Authority and terminology
 
@@ -41,7 +42,7 @@ The technical interpretations in these documents do not override those instructi
 
 ## The concept in one paragraph
 
-Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. Its local virtual file system contains folders and Markdown content. The app has a stable shell for manipulating and visualizing this workspace, including generated charts and interactive results. The user can read from separately authorized external apps, such as email, to create work in Smart Desk. Schedules, to-do lists, and offline local reminders belong in this environment. The app has no operated backend; AI requests use the user's ChatGPT subscription and therefore require a network connection. The founder wants capabilities as flexible as the AI can be within this arrangement, with a seamless phone interface.
+Smart Desk is an open-source personal workspace on a phone that people manage by talking to AI. It is a highly modular collection of connected capabilities, with the user's ChatGPT integration coordinating work across them. Its local virtual file system contains folders and Markdown content. The app has a stable shell for manipulating and visualizing this workspace, including generated charts and interactive results. Separately authorized connectors can read from external apps, such as email, to create work in Smart Desk; optional parts, including language and voice resources, can be downloaded according to user preference. Schedules, to-do lists, and offline local reminders belong in this environment. The app has no operated backend; AI requests use the user's ChatGPT subscription and therefore require a network connection. The founder wants capabilities as flexible as the AI can be within this arrangement, with a seamless phone interface.
 
 ## Source boundaries
 

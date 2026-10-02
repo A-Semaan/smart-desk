@@ -1,6 +1,6 @@
 # Smart Desk
 
-Smart Desk is an open-source, primarily mobile personal workspace managed through conversation with AI. Its workspace is a local, repository-like virtual file system of folders and Markdown content. The app provides stable tools to manipulate and visualize that workspace, including charts, tables, pages, and interactive results.
+Smart Desk is an open-source, primarily mobile personal workspace managed through conversation with AI. It is intended to be highly modular: local workspace capabilities, external connectors, visualizers, and optional downloadable parts work together through the user's ChatGPT integration. Its workspace is a local, repository-like virtual file system of folders and Markdown content. The app provides stable tools to manipulate and visualize that workspace, including charts, tables, pages, and interactive results.
 
 Schedules, to-do lists, in-app notifications, and connections to other apps are part of that vision. Email is the founder's example of an external connection. The broader ambition is to make the app's capabilities as flexible as the AI can be, with an exceptionally seamless phone experience.
 
@@ -20,6 +20,7 @@ Start with [the documentation index](docs/init%20prompt/README.md).
 | --- | --- |
 | [Product vision](docs/init%20prompt/01-product-vision.md) | The complete product intent, confirmed capabilities, and end-to-end scenarios |
 | [Workspace and execution](docs/init%20prompt/02-workspace-and-execution.md) | Conceptual architecture, persistent data, sandbox execution, artifacts, and scheduling |
+| [Modular system intent](docs/init%20prompt/07-modular-system.md) | How connected modules, optional downloads, and ChatGPT coordination fit the product vision |
 | [Experience and behavior](docs/init%20prompt/03-experience-and-behavior.md) | How conversation, generated interfaces, and ongoing work fit together on a phone |
 | [Integration and open decisions](docs/init%20prompt/04-integration-and-open-decisions.md) | Verified OpenAI constraints, unresolved choices, and technical questions |
 | [Limitations and external app feasibility](docs/init%20prompt/06-limitations-and-external-apps.md) | Current platform limits and the feasibility of email and other app connections |

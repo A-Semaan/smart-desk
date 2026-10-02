@@ -4,11 +4,11 @@
 
 **Implementation interpretation.** This document explains the system responsibilities implied by the agreed product. It is a conceptual reference, not a selected technology stack or an instruction to start building. Names, paths, states, and interfaces below are illustrative. Decisions that affect deployment, scope, cost, or user authority remain open until resolved by the founder.
 
-The confirmed foundation is a local virtual file system of folders and Markdown content, code execution within the app's available capabilities, and outputs that Smart Desk can display and revise. The application shell stays stable. Smart Desk has no operated backend; the only online AI work is through the user's ChatGPT plan. Separately authorized reads from outside providers also use their APIs when requested.
+The confirmed foundation is a local virtual file system of folders and Markdown content, code execution within the app's available capabilities, and outputs that Smart Desk can display and revise. The founder has also confirmed a highly modular product in which many connectors and downloadable parts work together through the ChatGPT integration. The application shell stays stable. Smart Desk has no operated backend; the only online AI work is through the user's ChatGPT plan. Separately authorized reads from outside providers also use their APIs when requested. [Modular system intent](07-modular-system.md) records that direction without choosing a plug-in technology.
 
 ## 2. Separate the responsibilities
 
-The system can be understood as a set of logical responsibilities even if an eventual implementation combines several of them in one process:
+The system is intended to be modular. These are logical responsibilities that may correspond to different modules or be grouped within one installed part; the eventual packaging remains open:
 
 | Responsibility | What it explains |
 | --- | --- |
@@ -21,7 +21,7 @@ The system can be understood as a set of logical responsibilities even if an eve
 | Artifact presentation | Turning saved output into a usable view inside Smart Desk |
 | Schedule and notice handling | Storing scheduled items and delivering the selected in-app behavior |
 
-This separation is about responsibility, not a prescription for separate services. The founder has chosen a local app without a Smart Desk operated backend. Implementation choices remain within that boundary.
+This separation is about responsibility, not a prescription for separate services or a one-to-one list of packages. The founder has chosen a local app without a Smart Desk operated backend. ChatGPT-powered coordination joins the available capabilities for a request; each local module or connector still performs its own actual operation. Implementation choices remain within that boundary.
 
 ## 3. The fundamental flow
 
@@ -35,7 +35,7 @@ Conversation + current workspace context
 AI reasoning using the authorized ChatGPT plan
         |
         v
-Available app operations and sandbox execution
+Available modules: app operations, connector reads, and sandbox execution
         |
         v
 Saved state, data, scripts, and artifacts

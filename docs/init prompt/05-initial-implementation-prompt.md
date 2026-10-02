@@ -6,6 +6,7 @@ The supporting documentation is part of the brief:
 
 - [Product vision](01-product-vision.md)
 - [Workspace and execution](02-workspace-and-execution.md)
+- [Modular system intent](07-modular-system.md)
 - [Experience and behavior](03-experience-and-behavior.md)
 - [Integration and open decisions](04-integration-and-open-decisions.md)
 - [Limitations and external app feasibility](06-limitations-and-external-apps.md)
@@ -18,7 +19,7 @@ Understand the entire intended product before proposing or making changes. Prese
 
 ### Product intent
 
-Smart Desk lets people organize their life and do useful work by talking to AI. The central analogy is the flexibility of an AI assistant that can work directly inside a laptop file system or repository, expressed through an exceptionally seamless mobile interface. The founder has clarified that Smart Desk has no operated backend and that its stable app shell manipulates and visualizes a local virtual file system of folders and Markdown content.
+Smart Desk lets people organize their life and do useful work by talking to AI. The central analogy is the flexibility of an AI assistant that can work directly inside a laptop file system or repository, expressed through an exceptionally seamless mobile interface. The founder has clarified that Smart Desk has no operated backend and that its stable app shell manipulates and visualizes a local virtual file system of folders and Markdown content. The product is highly modular: many connectors and optional downloadable parts are connected through the user's ChatGPT integration.
 
 The app contains a persistent internal workspace that behaves like a repository. The AI can inspect and use saved material, create and modify scripts, execute code inside an appropriate sandbox, and display the outputs in the app. Work persists beyond a message and remains available for later requests.
 
@@ -49,6 +50,7 @@ Preserve all of the following:
 17. Offline local timed reminders that can be scheduled with the phone's operating system.
 18. A light app with optional language and voice resources downloaded according to user preference.
 19. Clear information about connection permissions, relevant limitations, and when outside content is sent to ChatGPT.
+20. A highly modular system of connected capabilities, with many connectors and optional downloadable parts coordinated through ChatGPT.
 
 Scheduling, lists, and notifications are part of the broader workspace vision. Do not treat them as the limits of what Smart Desk can do.
 
@@ -76,7 +78,7 @@ These examples demonstrate the general capability. Do not turn each example into
 
 ### Internal system model
 
-Keep the responsibilities understandable: conversation and phone UI, provider connection, agent coordination, workspace persistence, sandbox execution, artifact rendering, and the selected schedule/notification behavior.
+Keep the responsibilities understandable: conversation and phone UI, provider connection, agent coordination, workspace persistence, sandbox execution, artifact rendering, and the selected schedule/notification behavior. Preserve the confirmed modular composition across these responsibilities. Do not infer that every responsibility is a separate download, that only the listed module types can exist, or that the app uses a particular plug-in framework.
 
 These are logical responsibilities, not a selected service topology. Runtime placement is local to the phone; storage representation, rendering technology, and application framework remain open.
 
@@ -120,7 +122,7 @@ Time interpretation, recurrence, calendar connections, and direct task-editing b
 
 ### Decisions and working agreements
 
-Read the open-decision register before making architectural choices. No mobile platform, framework, local storage engine, chart library, sandbox implementation, agent framework, speech implementation, or source license has been selected. The founder has selected no Smart Desk operated backend.
+Read the open-decision register before making architectural choices. No mobile platform, framework, module packaging format or catalogue, local storage engine, chart library, sandbox implementation, agent framework, speech implementation, or source license has been selected. The founder has selected a highly modular local app and no Smart Desk operated backend.
 
 Apply the founder's working agreements exactly:
 

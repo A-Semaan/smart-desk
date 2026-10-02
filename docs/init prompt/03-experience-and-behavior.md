@@ -24,6 +24,8 @@ For example, charts, tables, and generated pages may have different internal str
 
 The founder has clarified that the app shell remains stable: it manipulates and visualizes the local virtual file system. AI-generated workspace content can change without the AI rewriting the application's own functionality or global navigation.
 
+The founder has also clarified that Smart Desk is highly modular. Connectors and optional downloadable parts can extend the capabilities available to a request, while the ChatGPT integration coordinates their use. The experience should accurately reflect whether a relevant part is available, installed, or connected, without making the person manually assemble every multi-part task. The exact module discovery and management interface remains open. [Modular system intent](07-modular-system.md)
+
 ## 4. Logical surfaces
 
 The vision involves several logical surfaces. These are responsibilities the UI must express, not a decision to create a separate tab for each one.
@@ -158,7 +160,7 @@ The UI should avoid implying that a successful sign-in guarantees every capabili
 
 The founder also wants Smart Desk to read from other apps, with email as an example. Each outside account needs its own relevant authorization. In the interface, a request involving connected data should correspond to what that account actually permits and what Smart Desk actually retrieved. The exact providers and read workflows remain open; [the feasibility study](06-limitations-and-external-apps.md) records current constraints.
 
-The founder wants this to be transparent and light. A connection experience should plainly explain its read scope, provider limits, and the fact that relevant outside content will be sent to ChatGPT when the user asks AI to work with it. Optional offline language and voice resources should have understandable download sizes and installed status. The exact screens and wording remain design choices.
+The founder wants this to be transparent and light. A connection experience should plainly explain its read scope, provider limits, and the fact that relevant outside content will be sent to ChatGPT when the user asks AI to work with it. Optional downloadable parts, including offline language and voice resources, should have understandable download sizes and installed status where relevant. The exact screens and wording remain design choices.
 
 ## 17. Accessibility and phone interaction considerations
 

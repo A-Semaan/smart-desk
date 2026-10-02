@@ -8,7 +8,7 @@ The following sections are not a claim that Smart Desk has already been register
 
 ## 2. Confirmed subscription intent
 
-The founder wants Smart Desk's AI capabilities to use the user's own ChatGPT subscription. The product is open source and has no Smart Desk operated backend. Its virtual file system, rendering, and reminders are local to the phone. The founder wants read-only connections to other apps, naming email as an example, so information from those apps can be used to do work in the local workspace. The external-app feasibility and constraints are detailed in [the feasibility study](06-limitations-and-external-apps.md).
+The founder wants Smart Desk's AI capabilities to use the user's own ChatGPT subscription. The product is open source and has no Smart Desk operated backend. Its virtual file system, rendering, and reminders are local to the phone. The founder has explicitly chosen a highly modular structure: many connectors and optional downloadable parts work together through the ChatGPT integration. The founder wants read-only connections to other apps, naming email as an example, so information from those apps can be used to do work in the local workspace. The [modular system intent](07-modular-system.md) and [external-app feasibility study](06-limitations-and-external-apps.md) describe these directions separately from provider approval.
 
 These are product directions to preserve. This documentation does not substitute developer-paid API billing, require users to bring API keys, or introduce another model provider. Any such change would require the founder's explicit decision.
 
@@ -25,6 +25,8 @@ Usage draws on the user's existing allowance; connecting an app does not create 
 The documented plan-usage route has specific Responses API constraints. HTTP calls require streaming, disabled response storage, and explicit input context. Persistent server-side conversation state must not be assumed. Function/custom tools are supported through documented forms, while web search remains dependent on model and account policy.
 
 Hosted Code Interpreter, file search, image generation, native computer use, hosted MCP/connectors, and Responses tool search are listed as unsupported on this route. Audio/video inputs, the Files upload API, and transcription are also unsupported. These limits apply through Codex app-server as well as direct use of the route. [Preview limitations](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations)
+
+Smart Desk's modular design does not depend on those hosted connector features: local app modules can expose supported operations to the model through the documented custom-tool route. That is an implementation interpretation, not a selected module protocol or evidence that the complete mobile flow has been validated.
 
 This is a focused summary, not the complete request schema or an exhaustive integration recipe. Use the source for exact current parameters when implementing.
 
@@ -97,6 +99,11 @@ Every row below is unresolved unless the founder later answers it. Listing a cho
 | D27 | Connected account types | Whether each connection supports personal accounts, organizational accounts, or both |
 | D28 | Connection authority | When the user grants read access and how Smart Desk presents use of outside data |
 | D29 | Connected-data handling | Whether outside data is copied into the workspace, referenced remotely, or handled both ways |
+| D30 | Module packaging | Which capabilities are built in, downloaded, or supplied by the operating system |
+| D31 | Module authorship and distribution | Whether modules come only from Smart Desk maintainers or may be supplied by others, and through what mechanism |
+| D32 | Module coordination | How available capabilities are described to ChatGPT and how modules exchange workspace references and results |
+| D33 | Module lifecycle | How parts are installed, updated, disabled, removed, and kept compatible with saved work |
+| D34 | Module authority | How each module's permissions and access to provider credentials or executable content are bounded on the phone |
 
 The decision register records uncertainty. It is not a backlog of approved features and does not imply priority or implementation order.
 

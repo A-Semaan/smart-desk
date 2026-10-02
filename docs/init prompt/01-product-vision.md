@@ -8,6 +8,8 @@ Smart Desk brings that style of assistance into a mobile environment. A person o
 
 The app contains a persistent internal workspace that behaves in some ways like a repository. The AI can have access to files, structured data, scripts, and outputs within that workspace. It can execute code in a sandbox and use the output to present something inside the app.
 
+The founder later made the system's organizing principle explicit: Smart Desk should be highly modular, with many connectors and downloadable parts. The ChatGPT integration joins these parts for user requests. The local workspace and stable app shell remain the place where results persist and become visible. See [modular system intent](07-modular-system.md).
+
 The founder's phrase, "the capabilities should be as flexible as the AI can be," is central. The product is not fully defined by a fixed inventory of task types. Its environment is meant to let the AI implement a useful response to requests that the application developer did not individually anticipate.
 
 ## 2. The founder's own framing
@@ -79,6 +81,7 @@ The aspiration of a seamless interface includes the transitions between asking, 
 | C18 | Offline local reminders | Timed reminders should be schedulable through the phone's local notification mechanisms. |
 | C19 | Small offline support | The founder wants a light app with optional downloadable language and voice resources according to user preference. |
 | C20 | Transparent connections | The app should clearly show what a connected provider permits, relevant limits, and what information is sent online for an AI request. |
+| C21 | Modular composition | Smart Desk's capabilities are connected modules coordinated through the user's ChatGPT integration, including many external connectors and optional downloadable parts. Exact module packaging is undecided. |
 
 These identifiers are a traceability aid. They do not imply a build order, a priority, or separate products.
 
